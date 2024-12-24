@@ -17,8 +17,8 @@ public class SocialNetworkGroupsTests
             .ToList();
 
         Assert.NotEmpty(expectedUsers);
-        Assert.Equal("Алексей Смирнов", expectedUsers.First().FullName);
-        Assert.Equal("Мария Петрова", expectedUsers.Last().FullName);
+        Assert.Equal("Alexey Smirnov", expectedUsers.First().FullName);
+        Assert.Equal("Maria Petrova", expectedUsers.Last().FullName);
     }
 
     ///<summary>
@@ -34,8 +34,8 @@ public class SocialNetworkGroupsTests
             .ToList();
 
         Assert.NotEmpty(expectedPosts);
-        Assert.Equal("Рецепт борща", expectedPosts.First().Title);
-        Assert.Equal("Рецепт плова", expectedPosts.Last().Title);
+        Assert.Equal("Borscht recipe", expectedPosts.First().Title);
+        Assert.Equal("Pilaf recipe", expectedPosts.Last().Title);
     }
 
     ///<summary>
