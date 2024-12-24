@@ -3,8 +3,7 @@
 public enum GenderEnum
 {
     Male,
-    Female,
-    Not_Specified
+    Female
 }
 public class User
 {
