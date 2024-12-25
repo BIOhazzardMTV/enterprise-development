@@ -19,7 +19,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IRepository<User>, UserRepository>();
 builder.Services.AddTransient<IRepository<Group>, GroupRepository>();
-builder.Services.AddTransient<IRepository<GroupRole>, GroupRoleRepository>();
+
 builder.Services.AddTransient<IRepository<Post>, PostRepository>();
 
 builder.Services.AddAutoMapper(typeof(Mapping));
