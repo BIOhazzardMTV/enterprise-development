@@ -2,7 +2,6 @@ using SocialNetworkGroups.Domain;
 using SocialNetworkGroups.Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Server;
-using System.Xml;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,8 +19,8 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IRepository<User>, UserRepository>();
 builder.Services.AddTransient<IRepository<Group>, GroupRepository>();
-builder.Services.AddTransient<IRepository<Post>, PostRepository>();
 builder.Services.AddTransient<IRepository<GroupRole>, GroupRoleRepository>();
+builder.Services.AddTransient<IRepository<Post>, PostRepository>();
 
 builder.Services.AddAutoMapper(typeof(Mapping));
 
