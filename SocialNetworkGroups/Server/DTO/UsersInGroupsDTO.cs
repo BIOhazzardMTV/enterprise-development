@@ -1,14 +1,14 @@
-﻿namespace Server.DTO;
+﻿namespace Server.Dto;
 
-public class UsersInGroupsDTO
+public class UsersInGroupsDto
 {
     /// <summary>
     /// Группа
     /// </summary>
-    public GroupDTO? Group { get; set; }
+    public GroupDto? Group { get; set; }
 
     /// <summary>
     /// Список пользователей, состоящих в группе
     /// </summary>
-    public List<UserDTO>? Users { get; set; }
+    public List<UserDto>? Users { get; set; }
 }

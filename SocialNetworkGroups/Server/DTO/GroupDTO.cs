@@ -1,6 +1,6 @@
-﻿namespace Server.DTO;
+﻿namespace Server.Dto;
 
-public class GroupDTO
+public class GroupDto
 {
     /// <summary>
     /// Название группы

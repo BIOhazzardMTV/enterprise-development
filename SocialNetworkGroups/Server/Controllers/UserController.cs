@@ -2,7 +2,7 @@
 using SocialNetworkGroups.Domain;
 using SocialNetworkGroups.Domain.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Server.DTO;
+using Server.Dto;
 namespace Server.Controllers;
 
 [Route("api/[controller]")]
@@ -39,7 +39,7 @@ public class UserController(IRepository<User> repository, IMapper mapper) : Cont
     /// </summary>
     /// <param name="value">Добавляемый пользователь</param>
     [HttpPost]
-    public async Task<IActionResult> Add([FromBody] UserDTO value)
+    public async Task<IActionResult> Add([FromBody] UserDto value)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
@@ -55,7 +55,7 @@ public class UserController(IRepository<User> repository, IMapper mapper) : Cont
     /// <param name="id">Идентификатор заменяемого пользователя</param>
     /// <param name="value">Заменяющий пользователь</param>
     [HttpPut("{id}")]
-    public async Task<IActionResult> Replace(int id, [FromBody] UserDTO value)
+    public async Task<IActionResult> Replace(int id, [FromBody] UserDto value)
     {
         if(!ModelState.IsValid) return BadRequest(ModelState);
         var existingUser = await repository.Get(id);

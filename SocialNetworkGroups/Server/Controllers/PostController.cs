@@ -2,7 +2,7 @@
 using SocialNetworkGroups.Domain;
 using SocialNetworkGroups.Domain.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Server.DTO;
+using Server.Dto;
 namespace Server.Controllers;
 
 [Route("api/[controller]")]
@@ -16,8 +16,8 @@ public class PostController(IRepository<Post> repository, IMapper mapper) : Cont
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Post>>> Get()
     {
-        var Posts = await repository.GetAll();
-        return Ok(Posts);
+        var posts = await repository.GetAll();
+        return Ok(posts);
     }
 
     /// <summary>
@@ -28,10 +28,10 @@ public class PostController(IRepository<Post> repository, IMapper mapper) : Cont
     [HttpGet("{id}")]
     public async Task<ActionResult<Post>> Get(int id)
     {
-        var Post = await repository.Get(id);
-        if (Post == null) return NotFound();
+        var post = await repository.Get(id);
+        if (post == null) return NotFound();
 
-        return Ok(Post);
+        return Ok(post);
     }
 
     /// <summary>
@@ -39,12 +39,12 @@ public class PostController(IRepository<Post> repository, IMapper mapper) : Cont
     /// </summary>
     /// <param name="value">Добавляемая запись</param>
     [HttpPost]
-    public async Task<IActionResult> Add([FromBody] PostDTO value)
+    public async Task<IActionResult> Add([FromBody] PostDto value)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
-        var Post = mapper.Map<Post>(value);
-        await repository.Add(Post);
+        var post = mapper.Map<Post>(value);
+        await repository.Add(post);
 
         return Ok();
     }
@@ -55,14 +55,14 @@ public class PostController(IRepository<Post> repository, IMapper mapper) : Cont
     /// <param name="id">Идентификатор заменяемой записи</param>
     /// <param name="value">Заменяющая запись</param>
     [HttpPut("{id}")]
-    public async Task<IActionResult> Replace(int id, [FromBody] PostDTO value)
+    public async Task<IActionResult> Replace(int id, [FromBody] PostDto value)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
         var existingPost = await repository.Get(id);
         if (existingPost == null) return NotFound();
-        var Post = mapper.Map<Post>(value);
-        Post.Id = id;
-        await repository.Replace(Post, id);
+        var post = mapper.Map<Post>(value);
+        post.Id = id;
+        await repository.Replace(post, id);
 
         return Ok();
     }
@@ -74,8 +74,8 @@ public class PostController(IRepository<Post> repository, IMapper mapper) : Cont
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
-        var Post = await repository.Get(id);
-        if (Post == null) return NotFound();
+        var post = await repository.Get(id);
+        if (post == null) return NotFound();
         await repository.Delete(id);
         return Ok();
     }

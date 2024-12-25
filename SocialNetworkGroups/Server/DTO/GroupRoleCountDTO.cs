@@ -1,11 +1,11 @@
-﻿namespace Server.DTO;
+﻿namespace Server.Dto;
 
-public class GroupRoleCountDTO
+public class GroupRoleCountDto
 {
     /// <summary>
     /// Список ролей в группе
     /// </summary>
-    public GroupRoleDTO? GroupRoleDTO { get; set; }
+    public GroupRoleDto? GroupRoleDto { get; set; }
     /// <summary>
     /// Количество различных групп пользователей в каждой группе
     /// </summary>

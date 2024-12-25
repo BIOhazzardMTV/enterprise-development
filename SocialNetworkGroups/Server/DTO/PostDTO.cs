@@ -1,6 +1,6 @@
-﻿namespace Server.DTO;
+﻿namespace Server.Dto;
 
-public class PostDTO
+public class PostDto
 {
     /// <summary>
     /// Заголовок записи

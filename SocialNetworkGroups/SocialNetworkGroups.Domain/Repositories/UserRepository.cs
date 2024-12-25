@@ -6,7 +6,7 @@ public class UserRepository (SocialNetworkGroupsContext context) : IRepository<U
 {
     public async Task<List<User>> GetAll() => await context.Users.ToListAsync();
 
-    public async Task<User?> Get(int Id) => await context.Users.FirstOrDefaultAsync(u => u.Id == Id);
+    public async Task<User?> Get(int id) => await context.Users.FirstOrDefaultAsync(u => u.Id == id);
 
     public async Task Add(User obj)
     {
@@ -14,9 +14,9 @@ public class UserRepository (SocialNetworkGroupsContext context) : IRepository<U
         await context.SaveChangesAsync();
     }
 
-    public async Task Replace(User obj, int Id)
+    public async Task Replace(User obj, int id)
     {
-        var oldUser = await Get(Id);
+        var oldUser = await Get(id);
         if (oldUser == null) return;
 
         oldUser.FullName = obj.FullName;
@@ -27,9 +27,9 @@ public class UserRepository (SocialNetworkGroupsContext context) : IRepository<U
         await context.SaveChangesAsync();
     }
 
-    public async Task Delete(int Id)
+    public async Task Delete(int id)
     {
-        var deletedUser = await Get(Id);
+        var deletedUser = await Get(id);
         if (deletedUser == null) return;
 
         context.Users.Remove(deletedUser);

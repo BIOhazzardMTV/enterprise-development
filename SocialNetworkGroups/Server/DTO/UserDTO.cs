@@ -1,8 +1,8 @@
 ﻿using SocialNetworkGroups.Domain;
 
-namespace Server.DTO;
+namespace Server.Dto;
 
-public class UserDTO
+public class UserDto
 {
     /// <summary>
     /// ФИО пользователя

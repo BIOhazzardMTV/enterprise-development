@@ -1,8 +1,8 @@
 ﻿using SocialNetworkGroups.Domain;
 
-namespace Server.DTO
+namespace Server.Dto
 {
-    public class GroupRoleDTO
+    public class GroupRoleDto
     {
         /// <summary>
         /// Пользователь

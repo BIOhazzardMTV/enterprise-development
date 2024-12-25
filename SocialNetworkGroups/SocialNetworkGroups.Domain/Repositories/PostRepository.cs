@@ -6,7 +6,7 @@ public class PostRepository(SocialNetworkGroupsContext context) : IRepository<Po
 {
     public async Task<List<Post>> GetAll() => await context.Posts.ToListAsync();
 
-    public async Task<Post?> Get(int Id) => await context.Posts.FirstOrDefaultAsync(p => p.Id == Id);
+    public async Task<Post?> Get(int id) => await context.Posts.FirstOrDefaultAsync(p => p.Id == id);
 
     public async Task Add(Post obj)
     {

@@ -6,7 +6,7 @@ public class GroupRoleRepository(SocialNetworkGroupsContext context) : IReposito
 {
     public async Task<List<GroupRole>> GetAll() => await context.GroupRoles.ToListAsync();
 
-    public async Task<GroupRole?> Get(int Id) => await context.GroupRoles.FirstOrDefaultAsync(u => u.Id == Id);
+    public async Task<GroupRole?> Get(int id) => await context.GroupRoles.FirstOrDefaultAsync(u => u.Id == id);
 
     public async Task Add(GroupRole obj)
     {

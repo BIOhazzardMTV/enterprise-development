@@ -1,11 +1,11 @@
-﻿namespace Server.DTO;
+﻿namespace Server.Dto;
 
-public class GroupPostCountDTO
+public class GroupPostCountDto
 {
     ///<summary>
     /// Запись
     ///</summary>
-    public PostDTO? Post { get; set; }
+    public PostDto? Post { get; set; }
 
     ///<summary>
     /// Число записей в группе
